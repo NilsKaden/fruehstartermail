@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   def create
     @user=User.new(user_params)
     if @user.save
-      redirect_to '/users/show'
+      redirect_to '/users/index'
     else
       render 'new'
     end
@@ -39,9 +39,7 @@ class UsersController < ApplicationController
   
   def sendMail
     @user = User.find(params[:id])
-    if @user.email.valid?
-      @user.send_birthday_mail
-    end
+    @user.send_birthday_mail
     redirect_to users_url
   end
   private
