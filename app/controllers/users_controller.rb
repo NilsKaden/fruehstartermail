@@ -37,6 +37,12 @@ class UsersController < ApplicationController
     end
   end
   
+  def sendMail
+    @user = User.find(params[:id])
+    if @user.email.valid?
+      @user.send_birthday_mail
+    end
+  end
   private
   
     def user_params
