@@ -52,7 +52,7 @@ group :development do
 end
 
 group :production do
-  gem 'pg', '~> 1.0' # Use postgres for heroku deployment
+  gem 'pg', '0.20.0' # Use postgres for heroku deployment
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
