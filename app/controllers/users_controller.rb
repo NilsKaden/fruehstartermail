@@ -7,7 +7,14 @@ class UsersController < ApplicationController
   end
   
   def show
+    @user = User.find(params[:id])
+    @user.send_birthday_mail
+    puts "does this even get executed at all?"
+    puts @user.email
     redirect_to users_url
+    ## this sends the mail
+    ## instead of showing the single user
+    ## not very CRUD i guess
   end
   
   def destroy
@@ -37,13 +44,6 @@ class UsersController < ApplicationController
     end
   end
   
-  def sendMail
-    @user = User.find(params[:id])
-    @user.send_birthday_mail
-    puts "does this even get executed at all?"
-    puts @user.email
-    redirect_to users_url
-  end
   private
   
     def user_params
