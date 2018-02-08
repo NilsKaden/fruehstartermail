@@ -1,17 +1,22 @@
 class UsersController < ApplicationController
-  def new
+
+  def index
+    @users = User.all
+    @sortedUsers = @users.order(birthday: :desc) ## :asc for ascending
     @user = User.new
   end
   
   def show
-    @users = User.all
-    @sortedUsers = @users.order(birthday: :desc)
+    redirect_to users_url
   end
   
-  def delete
+  def destroy
+    User.find(params[:id]).delete
+    redirect_to users_url
   end
   
   def edit
+    @user = User.find(params[:id])
   end
   
   def create
@@ -20,6 +25,15 @@ class UsersController < ApplicationController
       redirect_to '/users/show'
     else
       render 'new'
+    end
+  end
+  
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      redirect_to users_url
+    else
+      render 'edit'
     end
   end
   

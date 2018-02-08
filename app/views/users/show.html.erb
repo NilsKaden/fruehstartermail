@@ -14,6 +14,8 @@
             <td><%= user.lastname %></td>
             <td><%= user.birthday.mday %>.<%= user.birthday.mon %>.<%= user.birthday.year %></td>
             <td><%= user.email %></td>
+            <td><%= link_to "Edit", edit_user_path(user) %></td>
+            <td><%= link_to "Delete", user, method: :delete %></td>
         </tr>
         <% end %>
 </table>
