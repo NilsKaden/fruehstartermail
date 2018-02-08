@@ -42,6 +42,7 @@ class UsersController < ApplicationController
     if @user.email.valid?
       @user.send_birthday_mail
     end
+    redirect_to users_url
   end
   private
   
