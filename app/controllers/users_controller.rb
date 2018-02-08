@@ -40,6 +40,7 @@ class UsersController < ApplicationController
   def sendMail
     @user = User.find(params[:id])
     @user.send_birthday_mail
+    puts @user.name
     redirect_to users_url
   end
   private
