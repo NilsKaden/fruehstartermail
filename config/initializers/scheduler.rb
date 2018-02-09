@@ -2,7 +2,7 @@ require 'rufus-scheduler'
 
 s = Rufus::Scheduler.singleton
 
-
+# heroku scheduler might be worth looking into
 
 unless defined?(Rails::Console) || File.split($0).last == 'rake'
 
