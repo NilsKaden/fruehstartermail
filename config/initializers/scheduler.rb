@@ -1,3 +1,4 @@
+=begin
 require 'rufus-scheduler'
 
 s = Rufus::Scheduler.singleton
@@ -19,3 +20,5 @@ unless defined?(Rails::Console) || File.split($0).last == 'rake'
   ## this will be changed to a daily check for a birthday
   ## or a check every 29 minutes to keep the process running on heroku
 end
+
+=end
