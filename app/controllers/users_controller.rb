@@ -32,7 +32,7 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to users_url
     else
-      render 'new'
+      redirect_to users_url
     end
   end
   
