@@ -6,6 +6,7 @@ class User < ApplicationRecord
     validates :birthday, presence: true
     
     def send_birthday_mail 
+        puts "send to mailer"
         UserMailer.birthday_mail(self).deliver_now
     end
     
@@ -17,8 +18,8 @@ class User < ApplicationRecord
         ## probably even for production
         User.all do |user|
             if (user.birthday.mon == Date.today.mon && user.birthday.mday == Date.today.mday)
+                puts "BIRTHDAY BOY: #{user.vorname}"
                 user.send_birthday_mail ## really important not to run this twice lel
-                puts "sent mail to #{user.vorname}"
             end
         end
     end

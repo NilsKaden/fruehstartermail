@@ -8,8 +8,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    puts "does this even get executed at all?"
-    puts @user.email
     @user.send_birthday_mail
     redirect_to users_url
     ## this sends the mail
