@@ -18,7 +18,7 @@ class User < ApplicationRecord
         ## this will use far more ressources, but is good enough for testing,
         ## probably even for production
         
-        User.where(birthday_string: Date.today.strftime("%d %m")).find_each do |user|
+        User.where(birthday_string: Date.today.strftime("%d-%m")).find_each do |user|
             puts user.email
             user.send_birthday_mail ## really important not to run this twice lel
         end
