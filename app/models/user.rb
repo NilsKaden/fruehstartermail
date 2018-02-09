@@ -6,7 +6,6 @@ class User < ApplicationRecord
     validates :lastname, presence: true
     validates :email, presence: true, uniqueness: { case_sensitive: false }
     validates :birthday, presence: true
-    attr_accesor :birthday_string
     
     def send_birthday_mail 
         puts "send to mailer"
