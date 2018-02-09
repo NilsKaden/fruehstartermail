@@ -12,6 +12,7 @@ unless defined?(Rails::Console) || File.split($0).last == 'rake'
 
   s.every '1m' do
     puts "hello, it's #{Time.now}"
+    User.check_all
   end
   
   
