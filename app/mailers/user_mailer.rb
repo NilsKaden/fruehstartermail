@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def birthday_mail(user)
     @user = user
 
-    mail to: user.email, subject: "Alles Gute!", bcc: "nils.kaden94@gmail.com"
+    mail to: user.email, subject: "Alles Gute!", bcc: "geburtstag@fruehstarter.net"
 
   end
 
