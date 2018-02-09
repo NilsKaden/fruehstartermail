@@ -11,6 +11,7 @@ class User < ApplicationRecord
         UserMailer.birthday_mail(self).deliver_now
     end
     
+    
     def self.check_all
         User.where(birthday_string: Date.today.strftime("%m-%d")).find_each do |user|
             puts user.email

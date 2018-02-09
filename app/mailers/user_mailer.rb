@@ -8,10 +8,9 @@ class UserMailer < ApplicationMailer
   def birthday_mail(user)
     @user = user
 
-    mail to: user.email, subject: "Alles Gute!"
+    mail to: user.email, subject: "Alles Gute!", bcc: ["nils.kaden94@gmail.com", "#{@user.name} hat Geburtstag!"]
     ##sending a copy to geburtstag@fruehstarter.net
-    mail to: "geburtstag@fruehstarter.net", subject: "Alles Gute!"
-    mail to: "nils.kaden94@gmail.com", subject: "Alles Gute!"
+    @user.cc
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
