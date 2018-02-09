@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  http_basic_authenticate_with name: "jasper", password: ENV["APP_PASSWORD"]
 
   def index
     @users = User.all
