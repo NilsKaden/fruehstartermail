@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.birthday_mail.subject
   #
-  def birthday_mail(user, subject, content)
+  def birthday_mail(user)
     @user = user
 
     mail to: user.email, subject: "Alles Gute!"
