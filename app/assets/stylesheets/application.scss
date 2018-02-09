@@ -30,7 +30,7 @@ body {
 
 .myFooter {
     text-align: center
-    .footer_info {
+    &.footer_info {
 	    font-family: "Helvetica Neue";
 	    font-size: 10px;
 	    font-variant: normal;
@@ -38,7 +38,7 @@ body {
 	    line-height: 14px;
     }
 
-    .footer_span {
+    &.footer_span {
 	    font-family: "Helvetica Neue";
 	    font-size: 14px;
 	    font-variant: normal;
