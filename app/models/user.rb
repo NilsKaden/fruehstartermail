@@ -12,12 +12,6 @@ class User < ApplicationRecord
     end
     
     def self.check_all
-        ## im gonna do some bad practice coding here
-        ## importing and checking every record in rails, instead of using a where statement
-        ## to select with SQL.
-        ## this will use far more ressources, but is good enough for testing,
-        ## probably even for production
-        
         User.where(birthday_string: Date.today.strftime("%m-%d")).find_each do |user|
             puts user.email
             user.send_birthday_mail ## really important not to run this twice lel

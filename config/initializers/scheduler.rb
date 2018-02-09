@@ -14,6 +14,12 @@ unless defined?(Rails::Console) || File.split($0).last == 'rake'
     User.check_all
   end
   
+  # does something every day at 11 AM
+  s.every '00 11 * * *' do
+    puts "hello, it's #{Time.now}"
+    User.check_all
+  end
+  
   
   ## this will be changed to a daily check for a birthday
   ## or a check every 29 minutes to keep the process running on heroku
