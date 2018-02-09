@@ -8,6 +8,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+
     @user.send_birthday_mail
     redirect_to users_url
     ## this sends the mail
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
   
   def create
     @user=User.new(user_params)
+    @user.birthday_string=@user.birthday.strftime("%d %m")
     if @user.save
       redirect_to users_url
     else

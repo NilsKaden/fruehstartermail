@@ -2,7 +2,6 @@ require 'rufus-scheduler'
 
 s = Rufus::Scheduler.singleton
 
-puts "Initialized Rufus-Scheduler"
 
 
 unless defined?(Rails::Console) || File.split($0).last == 'rake'

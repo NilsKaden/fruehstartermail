@@ -16,11 +16,10 @@ class User < ApplicationRecord
         ## to select with SQL.
         ## this will use far more ressources, but is good enough for testing,
         ## probably even for production
-        User.all do |user|
-            if (user.birthday.mon == Date.today.mon && user.birthday.mday == Date.today.mday)
-                puts "BIRTHDAY BOY: #{user.vorname}"
-                user.send_birthday_mail ## really important not to run this twice lel
-            end
+        
+        User.where(birthday_string: Date.today.strftime("%d %m")).find_each do |user|
+            puts user.email
+            user.send_birthday_mail ## really important not to run this twice lel
         end
     end
 end
