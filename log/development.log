@@ -5329,3 +5329,58 @@ Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.3ms)
   [1m[35m (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."birthday_string" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["birthday_string", "02-09"], ["LIMIT", 1000]]
+  Rendering user_mailer/birthday_mail.html.erb within layouts/mailer
+  Rendered user_mailer/birthday_mail.html.erb within layouts/mailer (1.3ms)
+  Rendering user_mailer/birthday_mail.text.erb within layouts/mailer
+  Rendered user_mailer/birthday_mail.text.erb within layouts/mailer (0.3ms)
+UserMailer#birthday_mail: processed outbound mail in 368.3ms
+Sent mail to mail@example.com (17.5ms)
+Date: Fri, 09 Feb 2018 16:11:43 +0000
+From: jasper@fruehstarter.net
+To: mail@example.com
+Message-ID: <5a7dc83f2e2ca_88bd67c0c154f@nils94-newsletter-5874938.mail>
+Subject: Alles Gute!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7dc83f2b8ee_88bd67c0c1477";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7dc83f2b8ee_88bd67c0c1477
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi asdasd,
+
+alles Liebe zum Geburtstag!
+
+Jasper
+
+----==_mimepart_5a7dc83f2b8ee_88bd67c0c1477
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hi asdasd,</p>
+
+<p>alles Liebe zum Geburtstag!</p>
+
+<p>Jasper</p>
+  </body>
+</html>
+
+----==_mimepart_5a7dc83f2b8ee_88bd67c0c1477--
+
