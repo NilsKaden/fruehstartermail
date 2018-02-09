@@ -4331,3 +4331,184 @@ SyntaxError (/home/ubuntu/workspace/app/models/user.rb:27: syntax error, unexpec
   
 app/models/user.rb:27: syntax error, unexpected keyword_end, expecting '}'
 app/controllers/users_controller.rb:4:in `index'
+Started GET "/" for 195.37.30.39 at 2018-02-09 05:04:27 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/ubuntu/workspace/app/models/user.rb:3: syntax error, unexpected '}', expecting ')'
+lf.birthday.strftime("%d %m")}
+                              ^
+/home/ubuntu/workspace/app/models/user.rb:27: syntax error, unexpected keyword_end, expecting '}'):
+  
+app/models/user.rb:3: syntax error, unexpected '}', expecting ')'
+app/models/user.rb:27: syntax error, unexpected keyword_end, expecting '}'
+app/controllers/users_controller.rb:4:in `index'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."birthday_string" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["birthday_string", "09 02"], ["LIMIT", 1000]]
+  Rendering user_mailer/birthday_mail.html.erb within layouts/mailer
+  Rendered user_mailer/birthday_mail.html.erb within layouts/mailer (0.7ms)
+  Rendering user_mailer/birthday_mail.text.erb within layouts/mailer
+  Rendered user_mailer/birthday_mail.text.erb within layouts/mailer (0.4ms)
+UserMailer#birthday_mail: processed outbound mail in 347.1ms
+Sent mail to hpm33547@miauj.com (23.0ms)
+Date: Fri, 09 Feb 2018 05:05:27 +0000
+From: jasper@fruehstarter.net
+To: hpm33547@miauj.com
+Message-ID: <5a7d2c1723b8f_2d891306c1c49563@nils94-newsletter-5874938.mail>
+Subject: Alles Gute!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5a7d2c1721968_2d891306c1c49463";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5a7d2c1721968_2d891306c1c49463
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi neuerUser,
+
+alles Liebe zum Geburtstag!
+
+Jasper
+
+----==_mimepart_5a7d2c1721968_2d891306c1c49463
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <p>Hi neuerUser,</p>
+
+<p>alles Liebe zum Geburtstag!</p>
+
+<p>Jasper</p>
+  </body>
+</html>
+
+----==_mimepart_5a7d2c1721968_2d891306c1c49463--
+
+Started GET "/" for 195.37.30.39 at 2018-02-09 05:05:28 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  Rendered users/index.html.erb within layouts/application (14.8ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 207ms (Views: 184.2ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/users/10" for 195.37.30.39 at 2018-02-09 05:05:42 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"vVtiMIsL/PyvSyK4ZYMEwyPH8r3jmgy8tXMi9PqaDbMw2/lrKJ9Emd5yNoxFXypM3pFo+Dpm6JYyDZi480KVWg==", "id"=>"10"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[35mSQL (16.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 25ms (ActiveRecord: 16.7ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-02-09 05:05:43 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  Rendered users/index.html.erb within layouts/application (4.7ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 29ms (Views: 26.4ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/11" for 195.37.30.39 at 2018-02-09 05:05:44 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rgRMBl8ji9BoI2W5SRWkcf9VLSMCLCr4La037kefxFEjhNdd/LcztRkacY1pyYr+AgO3ZtvQztKq042iTkdcuA==", "id"=>"11"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[35mSQL (15.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 11]]
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 19ms (ActiveRecord: 15.6ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-02-09 05:05:44 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+Completed 200 OK in 133ms (Views: 20.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/2" for 195.37.30.39 at 2018-02-09 05:05:45 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IFH3Nue5dNwVKKPNeUsRHsWW3tcQ/7YKsJAOmZ7f4o2t0WxtRC3MuWQRt/lZlz+ROMBEkskDUiA37rTVlwd6ZA==", "id"=>"2"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (16.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 2]]
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 20ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-02-09 05:05:45 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  Rendered users/index.html.erb within layouts/application (4.4ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+Completed 200 OK in 31ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/users/4" for 195.37.30.39 at 2018-02-09 05:05:46 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"6i99HqeKbGO61i8JPIO8gs9GcNcWQYdy1OUHs+Ie6jtnr+ZFBB7UBsvvOz0cX5INMhDqks+9Y1hTm73/68Zy0g==", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (16.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 4]]
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 20ms (ActiveRecord: 17.0ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-02-09 05:05:46 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  Rendered users/index.html.erb within layouts/application (5.2ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+Completed 200 OK in 26ms (Views: 23.5ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/users/3" for 195.37.30.39 at 2018-02-09 05:05:46 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"MMGfplXhpOXhfz/XHM3Hp8rhHN8qUxtaUf6GgDRdZnu9QQT99nUcgJBGK+M8EekoN7eGmvOv/3DWgDzMPYX+kg==", "id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (16.1ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 3]]
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 20ms (ActiveRecord: 16.3ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-02-09 05:05:46 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  Rendered users/index.html.erb within layouts/application (3.4ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+Completed 200 OK in 24ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
