@@ -1,9 +1,12 @@
 class User < ApplicationRecord
     before_save {self.email = email.downcase }
+    attr_accesor :birthday_string
+    
     validates :firstname, presence: true
     validates :lastname, presence: true
     validates :email, presence: true, uniqueness: { case_sensitive: false }
     validates :birthday, presence: true
+    attr_accesor :birthday_string
     
     def send_birthday_mail 
         puts "send to mailer"
