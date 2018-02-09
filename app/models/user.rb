@@ -9,7 +9,7 @@ class User < ApplicationRecord
         UserMailer.birthday_mail(self).deliver_now
     end
     
-    def check_all
+    def self.check_all
         ## im gonna do some bad practice coding here
         ## importing and checking every record in rails, instead of using a where statement
         ## to select with SQL.
