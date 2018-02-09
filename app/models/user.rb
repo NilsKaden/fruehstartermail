@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     before_save {self.email = email.downcase }
-    attr_accessor :birthday_string
+    after_save {self.update(:birthday_string => self.birthday.strftime("%d %m"))
     
     validates :firstname, presence: true
     validates :lastname, presence: true
