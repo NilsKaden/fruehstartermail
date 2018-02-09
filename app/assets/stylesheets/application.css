@@ -29,5 +29,23 @@ body {
 }
 
 .myFooter {
-        text-align: center
+    text-align: center
+}
+
+p {
+	font-family: "Helvetica Neue";
+	font-size: 10px;
+	font-style: italic;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 14px;
+}
+
+span {
+	font-family: "Helvetica Neue";
+	font-size: 14px;
+	font-style: italic;
+	font-variant: normal;
+	font-weight: 100;
+	line-height: 23px;
 }
