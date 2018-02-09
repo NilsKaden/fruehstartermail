@@ -9,11 +9,6 @@ unless defined?(Rails::Console) || File.split($0).last == 'rake'
   # only schedule when not running from the Ruby on Rails console
   # or from a rake task
 
-  s.every '24h' do
-    puts "hello, it's #{Time.now}"
-    User.check_all
-  end
-  
   # does something every day at 11 AM
   s.every '00 11 * * *' do
     puts "hello, it's #{Time.now}"
