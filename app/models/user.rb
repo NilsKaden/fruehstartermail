@@ -18,6 +18,7 @@ class User < ApplicationRecord
         User.all do |user|
             if (user.birthday.mon == Date.today.mon && user.birthday.mday == Date.today.mday)
                 user.send_birthday_mail ## really important not to run this twice lel
+                puts "sent mail to #{user.vorname}"
             end
         end
     end
