@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180209035943) do
+ActiveRecord::Schema.define(version: 20180209201842) do
+
+  create_table "groups", force: :cascade do |t|
+    t.string "name"
+    t.string "subject"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "firstname"
@@ -20,7 +28,9 @@ ActiveRecord::Schema.define(version: 20180209035943) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "birthday_string"
+    t.integer "group_id"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["group_id"], name: "index_users_on_group_id"
   end
 
 end
