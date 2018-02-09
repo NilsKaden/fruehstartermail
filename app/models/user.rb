@@ -1,6 +1,6 @@
 class User < ApplicationRecord
     before_save {self.email = email.downcase }
-    attr_accesor :birthday_string
+    attr_accessor :birthday_string
     
     validates :firstname, presence: true
     validates :lastname, presence: true
