@@ -1,4 +1,3 @@
-require "erb"
 
 class UserMailer < ApplicationMailer
 
@@ -10,7 +9,7 @@ class UserMailer < ApplicationMailer
   def birthday_mail(user)
     @user = user
 
-    mail to: user.email, body: Erb.new.Group.find(user.group_id).content, subject: Group.find(user.group_id).subject, bcc: "geburtstag@fruehstarter.net"
+    mail to: user.email, body: eval(Group.find(user.group_id).content), subject: Group.find(user.group_id).subject, bcc: "geburtstag@fruehstarter.net"
 
   end
 
