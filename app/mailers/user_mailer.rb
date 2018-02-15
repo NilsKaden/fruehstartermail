@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     @user = user
     contentString = Group.find(user.group_id).content
     puts contentString
-    match = contentString.split(/.+?(?=%%%%)/)
+    match = contentString.split("%%%%")
     puts match
     match.first += user.firstname += match.last
     
