@@ -14,7 +14,7 @@
     <%= f.email_field :email %>
     
     <%= f.label :Gruppe %>
-    <%= f.text_field :group_id %>
+    <%= f.select(:group_id, Group.all.collect{|x| [x.name, x.id]}, {}, class: "multiple") %>
     
     <%= f.submit "Save Changes", class:"btn" %>
 <% end %>
