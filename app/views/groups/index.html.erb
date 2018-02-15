@@ -1,0 +1,26 @@
+<table>
+    <tr>
+        <th>Groupname</th>
+        <th>Subject</th>
+        <th>Content</th>
+    </tr>
+    
+    <% @groups.each do |group| %>
+        <tr>
+            <td><%= group.name %></td>
+            <td><%= group.subject %></td>
+            <td><%= group.content %></td>
+            <td><%= link_to "Edit", edit_group_path(group) %></td>
+            <td><%= link_to "Delete", group, method: :delete %></td>
+        </tr>
+    <% end %>
+    
+    <%= form_for(@group) do |f| %>
+        <tr>
+            <td><%= f.text_field :name %></td>
+            <td><%= f.text_field :subject %></td>
+            <td><%= f.text_area :content %></td>
+            <td><%= f.submit "Add", class:"btn" %></td>
+        </tr>
+    <% end %>
+</table>

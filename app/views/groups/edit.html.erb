@@ -1,0 +1,15 @@
+<h1>Edit Group</h1>
+
+<%= form_for(@group) do |f| %>
+    <%= f.label :Groupname %>
+    <%= f.text_field :name %>
+    
+    <%= f.label :Subject %>
+    <%= f.text_field :subject %>
+    
+    <%= f.label :Content %>
+    <%= f.text_field :content %>
+    
+    <%= f.submit "Save Changes", class:"btn" %>
+<% end %>
+    
