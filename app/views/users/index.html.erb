@@ -26,7 +26,7 @@
             <td><%= f.text_field :lastname %></td>
             <td><%= f.date_field :birthday %></td>
             <td><%= f.email_field :email %></td>
-            <td><%= f.select(:group_id, Group.all.collect{|x| [x.name, x.id]}, {}, class: "multiple") %></td>
+            <td><%= f.select :group_id, Group.all.collect{|x| [x.name, x.id]}, {}, class: "multiple" %></td>
             <td><%= f.submit "Add", class:"btn" %></td>
         </tr>
     <% end %>

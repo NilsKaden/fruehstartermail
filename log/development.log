@@ -7691,3 +7691,46 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 29ms (Views: 24.8ms | ActiveRecord: 0.9ms)
 
 
+Started GET "/" for 195.37.30.39 at 2018-02-15 22:35:19 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (24.9ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 393ms (Views: 339.2ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/users" for 195.37.30.39 at 2018-02-15 22:35:29 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FeuTie3/ZNKRZf0zZpckmJPZupUJk4pZZ7a+K1aAOo1MwCe+f5PnezW8AHn5wH8siObQU7BaupNNioi3GXLaUQ==", "user"=>{"firstname"=>"asdasd", "lastname"=>"asdasdasd", "birthday"=>"2018-02-15", "email"=>"asdasdasd@example.coom", "group_id"=>"6"}, "commit"=>"Add"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "asdasdasd@example.coom"], ["LIMIT", 1]]
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "users" ("firstname", "lastname", "email", "birthday", "created_at", "updated_at", "birthday_string", "group_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["firstname", "asdasd"], ["lastname", "asdasdasd"], ["email", "asdasdasd@example.coom"], ["birthday", "2018-02-15"], ["created_at", "2018-02-15 22:35:29.946839"], ["updated_at", "2018-02-15 22:35:29.946839"], ["birthday_string", "02-15"], ["group_id", 6]]
+  [1m[35m (11.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 47ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-02-15 22:35:30 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 1.1ms)
+
+
