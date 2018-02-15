@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    belongs_to :group
+    
     before_save {self.email = email.downcase }
     
     validates :firstname, presence: true

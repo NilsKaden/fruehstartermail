@@ -5,6 +5,9 @@ class UsersController < ApplicationController
     @users = User.all
     @sortedUsers = @users.order(birthday: :desc) ## :asc for ascending
     @user = User.new
+    @groups = Group.all
+    
+    @option_string = Group.getOptionString
   end
   
   def show
@@ -48,6 +51,6 @@ class UsersController < ApplicationController
   private
   
     def user_params
-      params.require(:user).permit(:firstname, :lastname, :email, :birthday)
+      params.require(:user).permit(:firstname, :lastname, :email, :birthday, :group_id)
     end
 end
