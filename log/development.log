@@ -7734,3 +7734,116 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 39ms (Views: 34.7ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 195.37.30.39 at 2018-02-16 02:02:14 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (26.2ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 416ms (Views: 366.0ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 195.37.30.39 at 2018-02-16 02:03:31 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (7.0ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 116ms (Views: 81.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/groups" for 195.37.30.39 at 2018-02-16 02:03:54 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered groups/index.html.erb within layouts/application (4.9ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 29ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/6/edit" for 195.37.30.39 at 2018-02-16 02:04:22 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering groups/edit.html.erb within layouts/application
+  Rendered groups/edit.html.erb within layouts/application (14.9ms)
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/groups/6" for 195.37.30.39 at 2018-02-16 02:04:39 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uz2cW+eybt3p4ZZz4DtZhu7TYlscv1Qr7UTXsMYNk75KVYmJqd2cA+1UPPRw/WqsmTViZC02T4doDhLeHoHezA==", "group"=>{"name"=>"Freunde", "subject"=>"Alles Gute!", "content"=>"<p>Hi %%%,</p>\r\n\r\n<p>alles Liebe zum Geburtstag!</p>\r\n\r\n<p>Jasper</p>"}, "commit"=>"Save Changes", "id"=>"6"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "groups" SET "content" = ?, "updated_at" = ? WHERE "groups"."id" = ?[0m  [["content", "<p>Hi %%%,</p>\r\n\r\n<p>alles Liebe zum Geburtstag!</p>\r\n\r\n<p>Jasper</p>"], ["updated_at", "2018-02-16 02:04:39.542067"], ["id", 6]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to https://newsletter-nils94.c9users.io/groups
+Completed 302 Found in 161ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/groups" for 195.37.30.39 at 2018-02-16 02:04:39 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#index as HTML
+  Rendering groups/index.html.erb within layouts/application
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered groups/index.html.erb within layouts/application (3.9ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/groups/6/edit" for 195.37.30.39 at 2018-02-16 02:04:42 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering groups/edit.html.erb within layouts/application
+  Rendered groups/edit.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 34ms (Views: 30.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/6/edit" for 195.37.30.39 at 2018-02-16 02:09:44 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering groups/edit.html.erb within layouts/application
+  Rendered groups/edit.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/groups/6/edit" for 195.37.30.39 at 2018-02-16 02:10:11 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by GroupsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering groups/edit.html.erb within layouts/application
+  Rendered groups/edit.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.2ms)
+
+
