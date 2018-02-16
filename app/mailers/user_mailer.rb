@@ -9,12 +9,10 @@ class UserMailer < ApplicationMailer
   def birthday_mail(user)
     @user = user
     contentString = Group.find(user.group_id).content
-    puts contentString
     match = contentString.split("%%%%")
-    puts match
-    match.first += user.firstname += match.last
+    cont = match.first << user.firstname << match.last
     
-    mail to: user.email, body: match, subject: Group.find(user.group_id).subject, bcc: "geburtstag@fruehstarter.net"
+    mail to: user.email, body: cont, subject: Group.find(user.group_id).subject, bcc: "geburtstag@fruehstarter.net"
 
   end
 
