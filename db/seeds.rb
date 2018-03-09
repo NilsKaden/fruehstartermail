@@ -10,7 +10,21 @@
 first = Group.create!(
     name: "Freunde",
     subject: "Alles Gute!",
-    content: "Hi %%%, alles Liebe zum Geburtstag! Jasper",
+    content: "Hallo %%%,
+
+ich wünsche dir alles gute zum Geburtstag und hoffe du verlebst einen tollen Tag! Hier mal ein kurzer Geburtstagsgruß von mir:
+
+https://vimeo.com/219842630
+
+Lieben Gruß 
+
+Jasper Teßmann
+Scharnhorststr. 1c | Campus Center 
+21335 Lüneburg
+
+Mobil : 0172 5174465
+Jasper@fruehstarter.net
+www.frühstarter.de",
     datum: Date.today,
     activator: false)
 
