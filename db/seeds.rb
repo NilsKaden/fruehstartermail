@@ -10,7 +10,7 @@
 first = Group.create!(
     name: "Freunde",
     subject: "Alles Gute!",
-    content: "<p>Hi %%%,</p> <p>alles Liebe zum Geburtstag!</p> <p>Jasper</p>",
+    content: "Hi %%%, alles Liebe zum Geburtstag! Jasper",
     datum: Date.today,
     activator: false)
 
