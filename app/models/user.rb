@@ -8,12 +8,12 @@ class User < ApplicationRecord
     validates :email, presence: true, uniqueness: { case_sensitive: false }
     validates :birthday, presence: true
     validates :group_id, presence: true
+    #validates :female, presence: true
     
     def send_birthday_mail 
         puts "send to mailer"
         UserMailer.birthday_mail(self).deliver_now
     end
-    
     
     def self.check_all
         User.where(birthday_string: Date.today.strftime("%m-%d")).find_each do |user|

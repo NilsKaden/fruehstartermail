@@ -1,5 +1,6 @@
 <table>
     <tr>
+        <th>Anrede</th>
         <th>Vorname</th>
         <th>Nachname</th>
         <th>Geburtstag</th>
@@ -9,6 +10,14 @@
     
     <% @sortedUsers.each do |user| %>
         <tr>
+            <td><%= 
+            case user.female
+                when true
+                    r= "Frau"
+                when false
+                    r= "Herr"
+                end 
+            %></td>
             <td><%= user.firstname %></td>
             <td><%= user.lastname %></td>
             <td><%= user.birthday.mday %>.<%= user.birthday.mon %>.<%= user.birthday.year %></td>
@@ -22,6 +31,7 @@
     
     <%= form_for(@user) do |f| %>
         <tr>
+            <td><%= f.select :female, [['Frau', true], ['Herr', false]], {}, class:"multiple" %></td>
             <td><%= f.text_field :firstname %></td>
             <td><%= f.text_field :lastname %></td>
             <td><%= f.date_field :birthday %></td>

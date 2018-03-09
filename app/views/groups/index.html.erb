@@ -3,6 +3,8 @@
         <th>Groupname</th>
         <th>Subject</th>
         <th>Content</th>
+        <th>Date to Send</th>
+        <th>Activate Sending</th>
     </tr>
     
     <% @groups.each do |group| %>
@@ -10,6 +12,8 @@
             <td><%= group.name %></td>
             <td><%= group.subject %></td>
             <td><%= group.content %></td>
+            <td><%= group.datum %></td>
+            <td><%= group.activator %></td>
             <td><%= link_to "Edit", edit_group_path(group) %></td>
             <td><%= link_to "Delete", group, method: :delete %></td>
         </tr>
@@ -20,6 +24,8 @@
             <td><%= f.text_field :name %></td>
             <td><%= f.text_field :subject %></td>
             <td><%= f.text_area :content %></td>
+            <td><%= f.date_field :datum %></td>
+            <td><%= f.check_box(:activator)%></td>
             <td><%= f.submit "Add", class:"btn" %></td>
         </tr>
     <% end %>

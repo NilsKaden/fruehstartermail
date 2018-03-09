@@ -10,6 +10,12 @@
     <%= f.label :Content %>
     <%= f.text_area :content %>
     
+    <%= f.label :Datum %>
+    <%= f.date_field :datum %>
+    
+    <%= f.label :Activate %>
+    <%= f.check_box(:activator)%>
+    
     <%= f.submit "Save Changes", class:"btn" %>
 <% end %>
     

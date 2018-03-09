@@ -1,6 +1,8 @@
-<h1>Add a new contact</h1>
-
 <%= form_for(@user) do |f| %>
+    
+    <%= f.label :Anrede %>
+    <%= f.select :female, [['Frau', true], ['Herr', false]], {}, class:"multiple" %>
+    
     <%= f.label :Vorname %>
     <%= f.text_field :firstname %>
     

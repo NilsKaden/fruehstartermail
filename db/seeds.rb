@@ -21,3 +21,10 @@ first.users.create!(
     email: "nils.kaden@me.com",
     birthday: Date.new(1994, 12, 1),
     female: false)
+
+first.users.create!(
+    firstname: "Hue",
+    lastname: "Huehue",
+    email: "hue@example.com",
+    birthday: Date.today,
+    female: true)
