@@ -30,8 +30,7 @@ class UsersController < ApplicationController
   end
   
   def create
-    birthday_string = user_params[:birthday][5..9]
-    @user=User.new(user_params.merge(:birthday_string => birthday_string))
+    @user = User.new(user_params)
     if @user.save
       redirect_to users_url
     else

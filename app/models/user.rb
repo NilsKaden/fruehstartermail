@@ -1,7 +1,9 @@
 class User < ApplicationRecord
     belongs_to :group
     
-    before_save {self.email = email.downcase }
+    #before_save {self.email = email.downcase}
+    #before_save {self.birthday_string = self.birthday.to_s[5..9] }
+    before_save :prepareData
     
     validates :firstname, presence: true
     validates :lastname, presence: true
@@ -54,5 +56,10 @@ class User < ApplicationRecord
             puts user.email
             user.send_birthday_mail ## really important not to run this twice lel
         end
+    end
+    
+    def prepareData
+        self.email = email.downcase
+        self.birthday_string = self.birthday.to_s[5..9]
     end
 end

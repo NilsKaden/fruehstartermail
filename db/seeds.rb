@@ -10,7 +10,7 @@
 first = Group.create!(
     name: "Freunde",
     subject: "Alles Gute!",
-    content: "Hallo %title% %first% %last%,
+    content: "Hallo %first%,
 
 ich wünsche dir alles gute zum Geburtstag und hoffe du verlebst einen tollen Tag! Hier mal ein kurzer Geburtstagsgruß von mir:
 
