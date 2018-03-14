@@ -14,7 +14,7 @@ class User < ApplicationRecord
         # prepare content here, pass to mailer
         
         # get template
-        template = Group.find(self).content
+        template = Group.find(self.group_id).content
         puts template
         
         self.prepareTemplate(template)
