@@ -36,6 +36,8 @@ class User < ApplicationRecord
         identifiers.each_with_index do |ident, i|
             if template.include?(ident)
                 values.push(userData[i])
+            else 
+                values.push('')
             end
         end
         
@@ -44,7 +46,6 @@ class User < ApplicationRecord
             match = template.split(identifiers[i])
             template = match.first << str << match.last
         end
-        puts template
         return template
     end
     
