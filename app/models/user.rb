@@ -11,16 +11,11 @@ class User < ApplicationRecord
     #validates :female, presence: true
     
     def send_birthday_mail 
-        # prepare content here, pass to mailer
-        
         # get template
         template = Group.find(self.group_id).content
-        puts template
-        
-        self.prepareTemplate(template)
-        puts template
+
         puts "sent to mailer"
-        UserMailer.birthday_mail(self, template).deliver_now
+        UserMailer.birthday_mail(self, self.prepareTemplate(template)).deliver_now
     end
     
     def prepareTemplate (template)
@@ -45,10 +40,11 @@ class User < ApplicationRecord
         end
         
         # replace identifiersr in template with userData
-        values.each do |str| 
-            match = template.split(str)
+        values.each_with_index do |str, i| 
+            match = template.split(identifiers[i])
             template = match.first << str << match.last
         end
+        puts template
         return template
     end
     
