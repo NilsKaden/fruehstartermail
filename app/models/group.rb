@@ -16,8 +16,10 @@ class Group < ApplicationRecord
     
     def self.check_all_groups
         Group.where(datum: Date.today).find_each do |group|
-            group.users.all do |user|
-                user.send_birthday_mail
+            if group.activator == true
+                group.users.all do |user|
+                    user.send_birthday_mail
+                end
             end
         end
     end
