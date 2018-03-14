@@ -47,7 +47,7 @@ class User < ApplicationRecord
         # replace identifiersr in template with userData
         values.each do |str| 
             match = template.split(str)
-            template = match.first << value << match.last
+            template = match.first << str << match.last
         end
         return template
     end

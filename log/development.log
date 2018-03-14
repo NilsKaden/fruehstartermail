@@ -11776,3 +11776,202 @@ Completed 200 OK in 44ms (Views: 39.2ms | ActiveRecord: 1.2ms)
 
   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
   [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Started GET "/" for 195.37.30.39 at 2018-03-14 16:03:19 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+Filter chain halted as #<Proc:0x000000026b6d70@/usr/local/rvm/gems/ruby-2.4.0/gems/actionpack-5.1.4/lib/action_controller/metal/http_authentication.rb:70> rendered or redirected
+Completed 401 Unauthorized in 8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 195.37.30.39 at 2018-03-14 16:03:22 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (20.6ms)
+  Rendered layouts/_header.html.erb (2.4ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 454ms (Views: 375.1ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/users/2" for 195.37.30.39 at 2018-03-14 16:03:39 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+UserMailer#birthday_mail: processed outbound mail in 333.4ms
+Sent mail to hue@example.com (10.6ms)
+Date: Wed, 14 Mar 2018 16:03:40 +0000
+From: =?UTF-8?B?SmFzcGVyIFRlw59tYW5u?= <jasper@fruehstarter.net>
+To: hue@example.com
+Message-ID: <5aa947dc2268_b171ae71ac298e5@nils94-newsletter-5874938.mail>
+Subject: Alles Gute!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hallo %%%,
+
+ich w=C3=BCnsche dir alles gute zum Geburtstag und hoffe du verlebst eine=
+n tollen Tag! Hier mal ein kurzer Geburtstagsgru=C3=9F von mir:
+
+https://vimeo.com/219842630
+
+Lieben Gru=C3=9F =
+
+
+Jasper Te=C3=9Fmann
+Scharnhorststr. 1c | Campus Center =
+
+21335 L=C3=BCneburg
+
+Mobil : 0172 5174465
+Jasper@fruehstarter.net
+www.fr=C3=BChstarter.de=
+
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 613ms (ActiveRecord: 0.7ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-03-14 16:03:40 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (9.4ms)
+  Rendered layouts/_header.html.erb (1.8ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 36ms (Views: 31.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users/1" for 195.37.30.39 at 2018-03-14 16:03:45 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+UserMailer#birthday_mail: processed outbound mail in 2.2ms
+Sent mail to nils.kaden@me.com (2.6ms)
+Date: Wed, 14 Mar 2018 16:03:45 +0000
+From: =?UTF-8?B?SmFzcGVyIFRlw59tYW5u?= <jasper@fruehstarter.net>
+To: nils.kaden@me.com
+Message-ID: <5aa947e1ac57f_b171ae70bc2995b@nils94-newsletter-5874938.mail>
+Subject: Alles Gute!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hallo %%%,
+
+ich w=C3=BCnsche dir alles gute zum Geburtstag und hoffe du verlebst eine=
+n tollen Tag! Hier mal ein kurzer Geburtstagsgru=C3=9F von mir:
+
+https://vimeo.com/219842630
+
+Lieben Gru=C3=9F =
+
+
+Jasper Te=C3=9Fmann
+Scharnhorststr. 1c | Campus Center =
+
+21335 L=C3=BCneburg
+
+Mobil : 0172 5174465
+Jasper@fruehstarter.net
+www.fr=C3=BChstarter.de=
+
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-03-14 16:03:45 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (54.9ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 79ms (Views: 75.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/2" for 195.37.30.39 at 2018-03-14 16:03:47 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+UserMailer#birthday_mail: processed outbound mail in 1.3ms
+Sent mail to hue@example.com (2.1ms)
+Date: Wed, 14 Mar 2018 16:03:47 +0000
+From: =?UTF-8?B?SmFzcGVyIFRlw59tYW5u?= <jasper@fruehstarter.net>
+To: hue@example.com
+Message-ID: <5aa947e3925f0_b171ae6fcc30019@nils94-newsletter-5874938.mail>
+Subject: Alles Gute!
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: quoted-printable
+
+Hallo %%%,
+
+ich w=C3=BCnsche dir alles gute zum Geburtstag und hoffe du verlebst eine=
+n tollen Tag! Hier mal ein kurzer Geburtstagsgru=C3=9F von mir:
+
+https://vimeo.com/219842630
+
+Lieben Gru=C3=9F =
+
+
+Jasper Te=C3=9Fmann
+Scharnhorststr. 1c | Campus Center =
+
+21335 L=C3=BCneburg
+
+Mobil : 0172 5174465
+Jasper@fruehstarter.net
+www.fr=C3=BChstarter.de=
+
+Redirected to https://newsletter-nils94.c9users.io/users
+Completed 302 Found in 7ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 195.37.30.39 at 2018-03-14 16:03:47 +0000
+Cannot render console from 195.37.30.39! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."birthday" DESC[0m
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups"[0m
+  Rendered users/index.html.erb within layouts/application (6.0ms)
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 28ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT ?[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT  "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
